@@ -1,32 +1,49 @@
+import { useEffect, useState } from "react";
+import axios from 'axios';
 import Product from "../components/Product";
-import data from "../data";
-
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 export default function HomePage() {
+  const [products, setProducts] = useState([]); //hook state to manage the products
+  const [loading, setLoading] = useState(false);//loading hook
+  const [error, setError] = useState(false);//error hook
+  useEffect(() =>{
+   const fetchData = async () =>{
+     try{
+      setLoading(true);
+      const {data} = await axios.get('/api/products');//AJAX request
+      setLoading(false);
+      setProducts(data);
+     } catch(err){
+       setError(err.message);
+       setLoading(false);
+     }
+   };//fetching the data t
+   fetchData();
+  },[]); //define a hook that applies when rendering the products that takes the dependencies in an array
   return (
  <div>
-    <div id="bannerimage"></div>
+   {loading? <LoadingBox></LoadingBox>
+   :
+   error?<MessageBox variant="danger">{error}</MessageBox>
+   :
+   <div>
+   <div id="bannerimage"></div>
     <br />
     <br />
-
     <div id="our_products">
       <h2>Our Products</h2>
-
     </div>
     <div className="container">
       <div className="row">
         {
-          data.products.map(product => (
-
+          products.map(product => (
           <Product key={product._id} product={product}></Product>
-
           ))
         }
-
       </div>
-
    </div>
    <br/><br/>
-
     <div id="contact_us">
       <h2 className="h1-responsive font-weight-bold text-center my-4">
         Contact Us
@@ -42,7 +59,6 @@ export default function HomePage() {
       <br />
       <div className="row">
         <div className="col-md-3 mb-4"></div>
-
         <div className="col-md-3 mb-4">
           <div className="card mt-2 mx-auto p-4 bg-light">
             <div className="card-body bg-light">
@@ -155,8 +171,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-
         </div>
         <div className="col-md-3 mb-4 text-center">
             <ul className="list-unstyled mb-0">
@@ -164,12 +178,10 @@ export default function HomePage() {
                 <i className="fas fa-map-marker-alt fa-2x"></i>
                 <p>Toronto, ON X1X 1X1, Canada</p>
               </li>
-
               <li>
                 <i className="fa fa-phone mt-4 fa-2x"></i>
                 <p>+ 1 234 567 890</p>
               </li>
-
               <li>
                 <i className="fa fa-envelope mt-4 fa-2x"></i>
                 <p>contact@itsource.com</p>
@@ -180,6 +192,7 @@ export default function HomePage() {
       </div>
     </div>
     </div>
+  }
+    </div>
    );
-
-} 
+}
