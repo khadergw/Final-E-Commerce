@@ -1,5 +1,5 @@
-import data from './data';
-
+import data from "./data";
+import Product from "./components/Product";
 function App() {
   return (
     <div className="grid-container">
@@ -23,7 +23,6 @@ function App() {
                 <img src="images/logo9.png" />
               </a>
             </div>
-
             <div
               className="collapse navbar-collapse"
               id="bs-example-navbar-collapse-1"
@@ -41,7 +40,6 @@ function App() {
                   <a href="#contact_us">Contact Us</a>
                 </li>
               </ul>
-
               <ul className="nav navbar-nav navbar-right">
                 <li>
                   <a href="/cart">Cart</a>
@@ -54,63 +52,25 @@ function App() {
           </div>
         </nav>
       </header>
-
       <main>
         <div id="bannerimage"></div>
         <br />
         <br />
-
         <div id="our_products">
           <h2>Our Products</h2>
-
         </div>
         <div className="container">
           <div className="row">
-            {
-              data.products.map(product => (
-
-                <div key={product._id} className="col-md-4 mb-4">
-                <div className="card item">
-                  <a href={`/product/${product._id}`}>
-                    <img className="medium test" src={product.image} alt={product.name} />
-                  </a>
-                  <div className="card-body">
-                  <a href={`/product/${product._id}`}>
-                      <h2 className="product-name">{product.name}</h2>
-                    </a>
-                    <div className="rating">
-                      <span>
-                        <i className="fa fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa fa-star"></i>
-                      </span>
-                      <span>
-                        <i className="fa fa-star"></i>
-                      </span>
-                    </div>
-                    <div className="price">${product.price}</div>
-                  </div>
-                </div>
-              </div>
-
-              ))
-            }
-
+            {data.products.map((product) => (
+              <Product key={product._id} product={product}></Product>
+            ))}
           </div>
-
-       </div>
-       <br/><br/>
-
+        </div>
+        <br />
+        <br />
         <div id="contact_us">
           <h2 className="h1-responsive font-weight-bold text-center my-4">
-            Contact us
+            Contact Us
           </h2>
           <br />
           <br />
@@ -123,7 +83,6 @@ function App() {
           <br />
           <div className="row">
             <div className="col-md-3 mb-4"></div>
-
             <div className="col-md-3 mb-4">
               <div className="card mt-2 mx-auto p-4 bg-light">
                 <div className="card-body bg-light">
@@ -236,32 +195,27 @@ function App() {
                   </div>
                 </div>
               </div>
-
-
             </div>
             <div className="col-md-3 mb-4 text-center">
-                <ul className="list-unstyled mb-0">
-                  <li>
-                    <i className="fas fa-map-marker-alt fa-2x"></i>
-                    <p>Toronto, ON X1X 1X1, Canada</p>
-                  </li>
-
-                  <li>
-                    <i className="fa fa-phone mt-4 fa-2x"></i>
-                    <p>+ 1 234 567 890</p>
-                  </li>
-
-                  <li>
-                    <i className="fa fa-envelope mt-4 fa-2x"></i>
-                    <p>contact@itsource.com</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-md-3 mb-4"></div>
+              <ul className="list-unstyled mb-0">
+                <li>
+                  <i className="fas fa-map-marker-alt fa-2x"></i>
+                  <p>Toronto, ON X1X 1X1, Canada</p>
+                </li>
+                <li>
+                  <i className="fa fa-phone mt-4 fa-2x"></i>
+                  <p>+ 1 234 567 890</p>
+                </li>
+                <li>
+                  <i className="fa fa-envelope mt-4 fa-2x"></i>
+                  <p>contact@itsource.com</p>
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-3 mb-4"></div>
           </div>
         </div>
       </main>
-
       <footer className="page-footer font-small special-color-dark">
         <div className="container">
           <ul className="list-unstyled list-inline text-center">
@@ -292,7 +246,6 @@ function App() {
             </li>
           </ul>
         </div>
-
         <div className="footer-copyright text-center py-3">
           © 2022 All rights reserved
         </div>
@@ -300,5 +253,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

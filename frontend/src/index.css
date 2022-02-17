@@ -76,11 +76,13 @@ a.brand {
   font-weight: bolder;
   font-size: 18px;
 }
+	
 .circle{
 	border-radius: 50%;
 	margin: 0.15em;
 	font-size: 3em;
 	}
+	
 .fa-twitter{
 	background: #4099FF;
 	color: #FFFFFF;
@@ -164,6 +166,9 @@ img.medium {
   color: #F0C040;
   margin: 0.1rem;
 }
+.rating span:last-child {
+  color: #404040;
+}
 #contact_us {
   background-color: #F8F8F8;
   padding-top: 2%;
@@ -195,7 +200,7 @@ nav ul.left{
 footer .footer-copyright{
   background-color: rgb(54, 52, 52); padding: 0.5%;
 }
-.test{
+.medium{
   width: 100%;
   height: 200px;
 }
