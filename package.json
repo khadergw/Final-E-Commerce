@@ -1,11 +1,11 @@
 {
   "name": "final-e-commerce",
+  "type": "module",
   "version": "1.0.0",
   "description": "initial commit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khadergw/Final-E-Commerce.git"
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/khadergw/Final-E-Commerce/issues"
   },
-  "homepage": "https://github.com/khadergw/Final-E-Commerce#readme"
+  "homepage": "https://github.com/khadergw/Final-E-Commerce#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
