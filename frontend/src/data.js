@@ -102,7 +102,7 @@ const data = {
       category: 'Mouse',
       image: '/images/p9.jpg',
       price: 55,
-      countInStock: 12,
+      countInStock: 0,
       brand: 'Razer',
       rating: 4.5,
       numReviews: 30,
