@@ -1,17 +1,42 @@
-import data from '../data';
+//import data from '../data';
 import Rating from '../components/Rating';
 import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { detailsProduct } from '../actions/productActions';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 export default function ProductPage(props) {
   const params = useParams();
   //console.log(params); // params are showing the id
  // console.log(props) // props are empty
   //find the product based on the id
-  const product = data.products.find((x) => x._id.toString() === params.id); 
-  if (!product) {
-    return <div>Product Not Found!</div>;
-  }
+
+  // const product = data.products.find((x) => x._id.toString() === params.id); 
+  // if (!product) {
+  //   return <div>Product Not Found!</div>;
+  // }
+
+  const dispatch = useDispatch();
+  const productId = params.id;
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
+
+  useEffect(() => {
+    dispatch(detailsProduct(productId));
+  }, [dispatch, productId]);
+
+
+
   return (
+    <div>
+
+    {loading ? (
+      <LoadingBox></LoadingBox>
+    ) : error ? (
+      <MessageBox variant="danger">{error}</MessageBox>
+    ) : (
 
     <div className="container-fluid product-detail">
     <div className="row center">
@@ -20,7 +45,7 @@ export default function ProductPage(props) {
       </div>
       <div className="col-md-6">
         <div className="row center">
-
+  
         <ul className="list">
               <li>
                 <h1>{product.name}</h1>
@@ -64,7 +89,9 @@ export default function ProductPage(props) {
     </div>
     <Link to="/">Back to result</Link>
   </div>
+    )}
+    </div>
 
-  )
+  );
 
 }
