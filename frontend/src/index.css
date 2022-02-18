@@ -294,6 +294,24 @@ button:hover {
   border: 0.1rem #404040 ssolid;
 }
 
+button:hover,      
+input:hover,      
+select:hover,      
+textarea:hover { 
+  border: 0.1rem #404040 ssolid;    
+  border: 0.1rem #404040 ssolid;
+}
+
+input,      
+select,      
+textarea,      
+button {       
+  padding: 1rem;       
+  border-radius: 0.5rem;     
+}
+
+
+
 /*loading page and error page css*/
 .alert {
   padding: 1rem;
