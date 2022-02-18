@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { detailsProduct } from "../actions/productActions";
 import LoadingBox from "../components/LoadingBox";
+import { addToCart } from '../actions/cartActions';
 import MessageBox from "../components/MessageBox";
 export default function ProductPage(props) {
   const params = useParams();
@@ -25,7 +26,7 @@ export default function ProductPage(props) {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
   const addToCartHandler = () => {
-    // props.history.push(`/cart/${productId}?qty={qty}`);
+    dispatch(addToCart(productId, qty))
     navigate(`/cart/${productId}?qty=${qty}`);
   };
   return (

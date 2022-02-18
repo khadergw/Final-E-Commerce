@@ -326,3 +326,12 @@ button {
   color: #A02020;
   background-color: #FFE0E0;
 }
+
+.badge {
+  background-color: #F02020;
+  color: #FFFFFF;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
+}
