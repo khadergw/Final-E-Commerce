@@ -1,26 +1,19 @@
-import { useEffect, useState } from "react";
-import axios from 'axios';
-import Product from "../components/Product";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { listProducts } from '../actions/productActions';import Product from "../components/Product";
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 export default function HomePage() {
-  const [products, setProducts] = useState([]); //hook state to manage the products
-  const [loading, setLoading] = useState(false);//loading hook
-  const [error, setError] = useState(false);//error hook
+  // const [products, setProducts] = useState([]); //hook state to manage the products
+  // const [loading, setLoading] = useState(false);//loading hook
+  // const [error, setError] = useState(false);//error hook
+  const dispatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
   useEffect(() =>{
-   const fetchData = async () =>{
-     try{
-      setLoading(true);
-      const {data} = await axios.get('/api/products');//AJAX request
-      setLoading(false);
-      setProducts(data);
-     } catch(err){
-       setError(err.message);
-       setLoading(false);
-     }
-   };//fetching the data t
-   fetchData();
-  },[]); //define a hook that applies when rendering the products that takes the dependencies in an array
+    dispatch(listProducts());
+  }, [dispatch]);
+  
   return (
  <div>
    {loading? <LoadingBox></LoadingBox>
