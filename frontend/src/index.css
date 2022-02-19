@@ -339,7 +339,7 @@ min-30 {
   min-width: 30rem;
 }
 img.small {
-  max-width: 5rem;
+  max-width: 7rem;
   width: 100%;
 }
 ul{
@@ -351,12 +351,17 @@ h2.cart-subtotal{
   text-align: center;
 }
 .cart-card{
-  margin-top: 10%;
+  margin-top: 20%;
 }
 button.checkout{
   font-size: 16px;
   font-weight: bold;
 }
 li.cart-list{
-  margin-bottom: 2%;
+  margin-bottom: 4%;
+}
+img.large{
+  max-width: 50rem;
+  width: 100%;
+  margin-top: 20%;
 }
