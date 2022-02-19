@@ -335,3 +335,28 @@ button {
   font-size: 1.4rem;
   margin-left: 0.2rem;
 }
+min-30 {
+  min-width: 30rem;
+}
+img.small {
+  max-width: 5rem;
+  width: 100%;
+}
+ul{
+  list-style: none;
+}
+h2.cart-subtotal{
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+.cart-card{
+  margin-top: 10%;
+}
+button.checkout{
+  font-size: 16px;
+  font-weight: bold;
+}
+li.cart-list{
+  margin-bottom: 2%;
+}
