@@ -2,13 +2,20 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import CartPage from './pages/CartPage';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { signout } from './actions/userActions';
 import SigninPage from './pages/SigninPage';
 
 
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
   return (
     <BrowserRouter>
     <div className="grid-container">
@@ -50,14 +57,32 @@ function App() {
                 </li>
               </ul>
               <ul className="nav navbar-nav navbar-right">
-              <Link to="/cart">
+              <li>
+               <Link to="/cart">
               Cart
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
             </Link>
+            </li>
                 <li>
-                  <Link to="/signin">Sign In</Link>
+                    {/* <Link to="/signin">Sign In</Link> */}
+                    {userInfo ? (
+              <div className="dropdown">
+                <Link to="#">
+                  {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="#signout" onClick={signoutHandler}>
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <Link to="/signin">Sign In</Link>
+            )}
                 </li>
               </ul>
             </div>
