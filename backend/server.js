@@ -3,9 +3,13 @@ import mongoose from "mongoose";
 // import data from "./data.js";
 import userRouter from "./routers/userRouter.js";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import dotenv from 'dotenv';
 
 dotenv.config();
+=======
+import productRouter from './routers/productRouter.js';
+>>>>>>> c37c5875077006a037e97e60c059f247afd7a5c8
 =======
 import productRouter from './routers/productRouter.js';
 >>>>>>> c37c5875077006a037e97e60c059f247afd7a5c8
