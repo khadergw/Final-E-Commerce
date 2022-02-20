@@ -3,6 +3,9 @@ import CartPage from './pages/CartPage';
 import HomePage from './pages/HomePage';
 import ProductPage from './pages/ProductPage';
 import { useSelector } from 'react-redux';
+import SigninPage from './pages/SigninPage';
+
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -65,7 +68,9 @@ function App() {
       <Routes>
     <Route exact path="/"  element={<HomePage />}  />
     <Route path="/product/:id" element={<ProductPage />} />
-    <Route path="/cart/:id" element={<CartPage />} />
+    {/* <Route path="/cart/:id" element={<CartPage />} /> */}
+    <Route path="/cart" element={<CartPage />} />
+    <Route path="/signin" element={<SigninPage />} />
     </Routes>
       </main>
       <footer className="page-footer font-small special-color-dark">

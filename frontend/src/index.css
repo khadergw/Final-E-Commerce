@@ -365,3 +365,21 @@ img.large{
   width: 100%;
   margin-top: 20%;
 }
+/* Signin Form */
+.signin {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.signin > div {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+}
+.signin label {
+  margin: 1rem 0;
+  display: block;
+}
+.signin button{
+  background-color: #222;
+  color:white;
+}
