@@ -5,6 +5,7 @@ import ProductPage from './pages/ProductPage';
 import { useSelector, useDispatch } from 'react-redux';
 import { signout } from './actions/userActions';
 import SigninPage from './pages/SigninPage';
+import RegisterPage from './pages/RegisterPage';
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
     {/* <Route path="/cart/:id" element={<CartPage />} /> */}
     <Route path="/cart" element={<CartPage />} />
     <Route path="/signin" element={<SigninPage />} />
+    <Route path="/register" element={<RegisterPage />} />
     </Routes>
       </main>
       <footer className="page-footer font-small special-color-dark">

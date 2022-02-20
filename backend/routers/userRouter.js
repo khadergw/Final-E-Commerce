@@ -10,7 +10,7 @@ const userRouter = express.Router(); // allows multiple files to have the router
 userRouter.get(
   '/seed',
   expressAsyncHandler(async (req, res) => {
-console.log("seeding_users");
+// console.log("seeding_users");
     await User.remove({});
     const createdUsers = await User.insertMany(data.users);
     res.send({ createdUsers });
@@ -34,6 +34,25 @@ userRouter.post(
       }
     }
     res.status(401).send({ message: 'Invalid email or password' });
+  })
+);
+
+userRouter.post(
+  '/register',
+  expressAsyncHandler(async (req, res) => {
+    const user = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 8),
+    });
+    const createdUser = await user.save();
+    res.send({
+      _id: createdUser._id,
+      name: createdUser.name,
+      email: createdUser.email,
+      isAdmin: createdUser.isAdmin,
+      token: generateToken(createdUser),
+    });
   })
 );
 

@@ -55,7 +55,7 @@ export default function SigninPage(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password</label>  
           <input
             type="password"
             id="password"
@@ -73,8 +73,10 @@ export default function SigninPage(props) {
         <div>
           <label />
           <div>
-            New customer? <Link to="/register">Create your account</Link>
-          </div>
+          New customer?{' '}
+            <Link to={`/register?redirect=${redirect}`}>
+              Create your account
+            </Link>          </div>
         </div>
       </form>
     </div>

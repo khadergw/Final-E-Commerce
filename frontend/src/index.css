@@ -403,3 +403,8 @@ img.large{
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+/*loading*/
+.loading {
+  display: block !important;
+}
