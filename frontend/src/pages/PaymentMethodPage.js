@@ -13,11 +13,18 @@ export default function PaymentMethodPage(props) {
   }
   const [paymentMethod, setPaymentMethod] = useState("PayPal");
   const dispatch = useDispatch();
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(savePaymentMethod(paymentMethod));
-    //props.history.push('/placeorder');
-    navigate("/placeorder");
+    if (userInfo) {
+      navigate("/placeorder");
+      e.preventDefault();
+      dispatch(savePaymentMethod(paymentMethod));
+      //props.history.push('/placeorder');
+    } else {
+      //props.history.push('/signin?redirect=shipping');
+      navigate("/signin?redirect=placeorder");
+    }
   };
   return (
     <div>
