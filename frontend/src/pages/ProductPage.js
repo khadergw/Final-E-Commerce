@@ -1,20 +1,20 @@
 //import data from '../data';
-import Rating from '../components/Rating';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { detailsProduct } from '../actions/productActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import { addToCart }  from '../actions/cartActions';
+import Rating from "../components/Rating";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { detailsProduct } from "../actions/productActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import { addToCart } from "../actions/cartActions";
 
 export default function ProductPage(props) {
   const params = useParams();
   //console.log(params); // params are showing the id
- // console.log(props) // props are empty
+  // console.log(props) // props are empty
   //find the product based on the id
- 
-  // const product = data.products.find((x) => x._id.toString() === params.id); 
+
+  // const product = data.products.find((x) => x._id.toString() === params.id);
   // if (!product) {
   //   return <div>Product Not Found!</div>;
   // }
@@ -23,16 +23,24 @@ export default function ProductPage(props) {
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  const navigate = useNavigate();
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   // const navigate=useNavigate();
 
-
-useEffect(() => {
-  dispatch(detailsProduct(productId));
-}, [dispatch, productId]);
-const addToCartHandler = () => {
-  dispatch(addToCart(productId, qty))
-  // navigate(`/cart/${productId}?qty=${qty}`); 
-};
+  useEffect(() => {
+    dispatch(detailsProduct(productId));
+  }, [dispatch, productId]);
+  const addToCartHandler = () => {
+    if(userInfo){
+      dispatch(addToCart(productId, qty))
+      window.alert('Item(s) added to cart')
+      //  navigate(`/cart?id=${productId}&qty=${qty}`);
+      } else {
+      navigate(`/signin`);
+      }
+    // navigate(`/cart/${productId}?qty=${qty}`);
+  };
   return (
     <div>
       {loading ? (

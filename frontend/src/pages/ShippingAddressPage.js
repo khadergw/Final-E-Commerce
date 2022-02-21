@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams} from 'react-router-dom';
 import { saveShippingAddress } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
 export default function ShippingAddressPage(props) {
@@ -8,11 +8,13 @@ export default function ShippingAddressPage(props) {
   const { userInfo } = userSignin;
   const cart = useSelector((state) => state.cart);
   const  shippingAddress  = cart;
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   if (!userInfo) {
     //props.history.push('/signin');
     navigate("/signin");
   }
+  
+  const params = useParams;
   const [fullName, setFullName] = useState(shippingAddress.fullName);
   const [address, setAddress] = useState(shippingAddress.address);
   const [city, setCity] = useState(shippingAddress.city);
