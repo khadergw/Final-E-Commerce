@@ -423,3 +423,7 @@ img.large{
   border-top-color: #222;
   color: #222;
 }
+.alert-success {
+  color: #20a020;
+  background-color: #eeffe0;
+}
