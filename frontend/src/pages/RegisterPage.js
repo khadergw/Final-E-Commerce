@@ -36,8 +36,8 @@ export default function RegisterPage(props) {
   useEffect(() => {
     if (userInfo) {
     //  props.history.push(redirect);
-    navigate("/"); 
-    }
+    navigate('/shipping');
+  }
   });// [props.history, redirect, userInfo]);
   return (
     <div>

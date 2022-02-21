@@ -12,7 +12,7 @@ userRouter.get(
   expressAsyncHandler(async (req, res) => {
 // console.log("seeding_users");
     await User.remove({});
-    const createdUsers = await User.insertMany(data.users);
+    const createdUsers = await User.insert(data.users);
     res.send({ createdUsers });
   })
 );

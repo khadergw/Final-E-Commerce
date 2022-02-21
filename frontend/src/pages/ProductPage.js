@@ -23,7 +23,7 @@ export default function ProductPage(props) {
   const [qty, setQty] = useState(1);
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
 
 
 useEffect(() => {
@@ -31,7 +31,7 @@ useEffect(() => {
 }, [dispatch, productId]);
 const addToCartHandler = () => {
   dispatch(addToCart(productId, qty))
-  navigate(`/cart/${productId}?qty=${qty}`);
+  // navigate(`/cart/${productId}?qty=${qty}`); 
 };
   return (
     <div>

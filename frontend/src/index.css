@@ -408,3 +408,18 @@ img.large{
 .loading {
   display: block !important;
 }
+
+/* Checkout Steps */
+
+.checkout-steps > div {
+  border-top: 0.3rem #C0C0C0 solid;
+  color: #C0C0C0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+  padding-left:2%;
+}
+.checkout-steps > div.active {
+  border-top-color: #222;
+  color: #222;
+}

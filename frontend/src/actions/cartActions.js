@@ -1,5 +1,5 @@
 import Axios from "axios"
-import {CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants';
+import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING_ADDRESS, } from '../constants/cartConstants';
 
 export const addToCart = (productId, qty) => async(dispatch, getState) => { //dispatch an action and get the state of the Redux store
   //send AJAX req to server to get info about the product
@@ -24,4 +24,9 @@ export const removeFromCart = (productId) => (dispatch, getState) => {
   dispatch({ type: CART_REMOVE_ITEM, payload: productId });
   localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
 
+};
+
+export const saveShippingAddress = (data) => (dispatch) => {
+  dispatch({ type: CART_SAVE_SHIPPING_ADDRESS, payload: data });
+  localStorage.setItem('shippingAddress', JSON.stringify(data));
 };
