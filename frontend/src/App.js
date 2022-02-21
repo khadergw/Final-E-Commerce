@@ -13,8 +13,10 @@ import {
   useNavigate,
 } from "react-router-dom";
 import ShippingAddressPage from "./pages/ShippingAddressPage";
+import PaymentMethodPage from './pages/PaymentMethodPage';
 
 function App() {
+  const navigate = useNavigate;
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
@@ -22,6 +24,7 @@ function App() {
   const dispatch = useDispatch();
   const signoutHandler = () => {
     dispatch(signout());
+    navigate("/");
   };
   return (
     <BrowserRouter>
@@ -105,6 +108,7 @@ function App() {
             <Route path="/signin" element={<SigninPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/shipping" element={<ShippingAddressPage />} />
+            <Route path="/payment" element={<PaymentMethodPage />} />
           </Routes>
         </main>
         <footer className="page-footer font-small special-color-dark">
