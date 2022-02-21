@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { signout } from "./actions/userActions";
 import SigninPage from "./pages/SigninPage";
 import RegisterPage from "./pages/RegisterPage";
+import PlaceOrderPage from './pages/PlaceOrderPage';
+
 import {
   BrowserRouter,
   Routes,
@@ -109,6 +111,7 @@ function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/shipping" element={<ShippingAddressPage />} />
             <Route path="/payment" element={<PaymentMethodPage />} />
+            <Route path="/placeorder" element={<PlaceOrderPage />} />
           </Routes>
         </main>
         <footer className="page-footer font-small special-color-dark">
