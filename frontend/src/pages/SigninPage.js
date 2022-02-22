@@ -4,6 +4,7 @@ import {useLocation, Link, useNavigate } from 'react-router-dom';
 import { signin } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import NavBar from '../components/NavBar';
 
 export default function SigninPage(props) {
   const [email, setEmail] = useState('');
@@ -38,6 +39,7 @@ export default function SigninPage(props) {
     }); //[props.history, redirect, userInfo]);
   return (
     <div>
+            <NavBar></NavBar>
       <form className="signin" onSubmit={submitHandler}>
         <div>
           <h1>Sign In</h1>

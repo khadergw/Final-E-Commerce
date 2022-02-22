@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { saveShippingAddress } from "../actions/cartActions";
+import NavBar from '../components/NavBar';
 import CheckoutSteps from "../components/CheckoutSteps";
+
 export default function ShippingAddressPage(props) {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -36,6 +38,7 @@ export default function ShippingAddressPage(props) {
   };
   return (
     <div>
+            <NavBar></NavBar>
       <br />
       <br />
       <div className="row">
@@ -43,9 +46,9 @@ export default function ShippingAddressPage(props) {
       </div>
       <div className="row">
         <form className="signin" onSubmit={submitHandler}>
-          <div>
-            <h1>Shipping Address</h1>
-          </div>
+        <div className='title-home'>
+          <h2>Shipping Address</h2>
+        </div>
           <div>
             <label htmlFor="fullName">Full Name</label>
             <input

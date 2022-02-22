@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
+import NavBar from '../components/NavBar';
+
 export default function PaymentMethodPage(props) {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
@@ -28,6 +30,7 @@ export default function PaymentMethodPage(props) {
   };
   return (
     <div>
+            <NavBar></NavBar>
       <br />
       <br />
       <div className="row">
@@ -35,8 +38,8 @@ export default function PaymentMethodPage(props) {
       </div>
       <div className="row">
         <form className="signin" onSubmit={submitHandler}>
-          <div>
-            <h1>Payment Method</h1>
+        <div className='title-home'>
+          <h2>Payment Method</h2>
           </div>
           <div>
             <div>

@@ -25,7 +25,7 @@ const data = {
     {
       name: 'Dell 27 Monitor - S2721D',
       category: 'Monitors',
-      image: '/images/p1.jpg',
+      image: '/images/p1.png',
       price: 178,
       countInStock: 10,
       brand: 'Dell',
@@ -36,7 +36,7 @@ const data = {
     {
       name: 'Samsung Monitor T55 27 Inch |27" ',
       category: 'Monitors',
-      image: '/images/p2.jpg',
+      image: '/images/p2.png',
       price: 190,
       countInStock: 20,
       brand: 'Samsung',
@@ -47,7 +47,7 @@ const data = {
     {
       name: '27‑inch iMac Monitor',
       category: 'Monitors',
-      image: '/images/p3.jpg',
+      image: '/images/p3.png',
       price: 220,
       countInStock: 0,
       brand: 'Apple',
@@ -58,7 +58,7 @@ const data = {
     {
       name: 'Lenovo 300 USB Keyboard',
       category: 'Keyboards',
-      image: '/images/p4.jpg',
+      image: '/images/p4.png',
       price: 25,
       countInStock: 15,
       brand: 'Lenovo',
@@ -69,7 +69,7 @@ const data = {
     {
       name: 'Dell KB522 Business Multimedia Keyboard',
       category: 'Keyboards',
-      image: '/images/p5.jpg',
+      image: '/images/p5.png',
       price: 30,
       countInStock: 5,
       brand: 'Dell',
@@ -80,7 +80,7 @@ const data = {
     {
       name: 'Magic Apple Keyboard',
       category: 'Keyboards',
-      image: '/images/p6.jpg',
+      image: '/images/p6.png',
       price: 90,
       countInStock: 12,
       brand: 'Apple',
@@ -91,7 +91,7 @@ const data = {
     {
       name: 'Apple Magic Mouse',
       category: 'Mouse',
-      image: '/images/p7.jpg',
+      image: '/images/p7.png',
       price: 75,
       countInStock: 12,
       brand: 'Apple',
@@ -102,7 +102,7 @@ const data = {
     {
       name: 'Dell Multi-device Wireless Mouse',
       category: 'Mouse',
-      image: '/images/p8.jpg',
+      image: '/images/p8.png',
       price: 60,
       countInStock: 12,
       brand: 'Dell',
@@ -113,7 +113,7 @@ const data = {
     {
       name: 'Razer DeathAdder V2 Gaming Mouse',
       category: 'Mouse',
-      image: '/images/p9.jpg',
+      image: '/images/p9.png',
       price: 55,
       countInStock: 0,
       brand: 'Razer',

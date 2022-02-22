@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { register } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import NavBar from '../components/NavBar';
 
 export default function RegisterPage(props) {
   const [name, setName] = useState('');
@@ -31,16 +32,19 @@ export default function RegisterPage(props) {
       alert('Password and confirm password are not match');
     } else {
       dispatch(register(name, email, password));
+      navigate('/');
     }
   };
-  useEffect(() => {
-    if (userInfo) {
-    //  props.history.push(redirect);
-    navigate('/shipping');
-  }
-  });// [props.history, redirect, userInfo]);
+  // useEffect(() => {
+  //   if (userInfo) {
+  //   //  props.history.push(redirect);
+  //   navigate('/');
+  // }
+  // });// [props.history, redirect, userInfo]);
   return (
     <div>
+            <NavBar></NavBar>
+
       <form className="signin" onSubmit={submitHandler}>
         <div>
           <h1>Create Account</h1>

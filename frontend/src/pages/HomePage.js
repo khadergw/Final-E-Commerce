@@ -1,8 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../actions/productActions';import Product from "../components/Product";
+import { listProducts } from '../actions/productActions';
+import Product from "../components/Product";
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import SlideShow from '../components/SlideShow';
+import NavBar from '../components/NavBar';
+
+
 export default function HomePage() {
   // const [products, setProducts] = useState([]); //hook state to manage the products
   // const [loading, setLoading] = useState(false);//loading hook
@@ -13,36 +18,53 @@ export default function HomePage() {
   useEffect(() =>{
     dispatch(listProducts());
   }, [dispatch]);
-  
   return (
  <div>
+
+   <NavBar></NavBar>
+
    {loading? <LoadingBox></LoadingBox>
    :
    error?<MessageBox variant="danger">{error}</MessageBox>
    :
    <div>
-   <div id="bannerimage"></div>
-    <br />
-    <br />
-    <div id="our_products">
-      <h2>Our Products</h2>
+
+   {/* <div id="bannerimage"></div> */}
+
+   <div id="App">
+   <SlideShow></SlideShow>
     </div>
+
+    <br />
+    <br />
+
     <div className="container">
+    <div id="our_products" className="title-home">
+      <h2>Our Products</h2>
+
+    </div><br/>
+
       <div className="row">
         {
           products.map(product => (
           <Product key={product._id} product={product}></Product>
           ))
         }
+   
       </div>
    </div>
    <br/><br/>
+
+
+
     <div id="contact_us">
+
+    <div className="title-home container">
       <h2 className="h1-responsive font-weight-bold text-center my-4">
         Contact Us
       </h2>
-      <br />
-      <br />
+      </div>
+      <br/><br/>
       <p className="text-center w-responsive mx-auto mb-5">
         Do you have any questions? Please do not hesitate to contact us
         directly. Our team will come back to you within a matter of hours to
@@ -51,7 +73,8 @@ export default function HomePage() {
       <br />
       <br />
       <div className="row">
-        <div className="col-md-3 mb-4"></div>
+      <div className="col-md-2 mb-4"></div>
+
         <div className="col-md-3 mb-4">
           <div className="card mt-2 mx-auto p-4 bg-light">
             <div className="card-body bg-light">
@@ -164,8 +187,14 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+
         </div>
-        <div className="col-md-3 mb-4 text-center">
+
+        <div className="col-md-2 mb-4"></div>
+
+
+        <div className="col-md-3 mb-4 text-center paper">
             <ul className="list-unstyled mb-0">
               <li>
                 <i className="fas fa-map-marker-alt fa-2x"></i>
@@ -181,11 +210,15 @@ export default function HomePage() {
               </li>
             </ul>
           </div>
-          <div className="col-md-3 mb-4"></div>
+          <div className="col-md-2 mb-4"></div>
+
+
       </div>
     </div>
     </div>
   }
+    <br/><br/>
     </div>
    );
+
 }
