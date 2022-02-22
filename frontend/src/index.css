@@ -156,6 +156,7 @@ img.medium {
 /* Card */
 .item:hover {
   transform: scale(1.2);
+  transition: 0.2s;
 }
 .item {
   border: 0.3rem #c0c0c0 solid;
