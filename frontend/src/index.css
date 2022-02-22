@@ -282,6 +282,9 @@ nav img {
 nav ul.left{
   margin-left: 60%;
 }
+.navbar-right{
+  margin-right: 2%;
+}
 footer .footer-copyright{
   background-color: rgb(54, 52, 52); padding: 0.5%;
 }
@@ -478,15 +481,23 @@ img.large{
 }
 .dropdown-content {
   position: absolute;
-  display: none;
+   display: none;
   right: 0;
-  min-width: 12rem;
+  /* max-width: 12rem; */
   padding: 1rem;
   z-index: 1;
   background-color: #203040;
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
+
+}
+.dropdown-content a{
+  text-decoration: none;
+  display:block;
+  text-align: left;
+font-size: 16px !important;
+white-space: nowrap;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -598,10 +609,10 @@ h2.product-name{
    color: #fff;
    font-weight:bold;
  }
- button.return Link:hover, button.return Link{
+ /* button.return Link:hover, button.return Link{
    text-decoration: none;
    pointer-events: none;
- }
+ } */
  /*image*/
  .large{
    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -670,4 +681,44 @@ h2.product-name{
  .font-order a{
 text-decoration: none;
 color:#222
+}
+
+
+button.small {
+  font-size: 1.2rem;
+}
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table tbody tr:nth-of-type(odd) {
+  background-color: #f4f4f4;
+}
+.table td,
+.table th {
+  text-align: left;
+  border: 0.1rem solid #e4e4e4;
+  padding: 0.5rem;
+}
+.table button {
+  margin: 0 0.2rem;
+}
+
+button.returnb {
+  border: none;
+  background-color: #222;
+  border-radius: 4px;
+  color: #fff;
+  font-weight:bold;
+float:right;
+margin-right:10%;
+}
+.returnb a{
+  color:white;
+  padding:10px;
+  font-size: 16px;
+}
+button.returnb a:hover, button.returnb a{
+  text-decoration: none;
 }

@@ -73,10 +73,13 @@ export default function NavBar(){
                 {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
               </Link>
               <ul className="dropdown-content">
+              <li>
+                    <a href="/orderhistory">Order History</a>
+                  </li>
                 <li>
-                  <Link to="/signin" onClick={signoutHandler}>
+                  <a href="/signin" onClick={signoutHandler}>
                     Sign Out
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

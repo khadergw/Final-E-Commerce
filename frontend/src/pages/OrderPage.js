@@ -187,8 +187,11 @@ export default function OrderScreen(props) {
           </div>
         </div>
       </div>
+
     </div>
+
 }
+<br/> <button className='returnb'><a href="/orderhistory">View Order History</a></button>
     </div>
   );
 }
