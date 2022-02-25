@@ -7,26 +7,33 @@ IT Source is a fully functional e-commerce website that allows registered users 
 
 ## Website Demo
 
-!["Website Demo - Home Page"]()
-!["Website Demo - Product Details Page"]()
-!["Website Demo - Cart Page"]()
-!["Website Demo - Shipping Page"]()
-!["Website Demo - Place Order Page"]()
-!["Website Demo - Order Summary Page"]()
-!["Website Demo - Order History Page"]()
-!["Website Demo - Sign in Page"]()
+!["Website Demo - Home Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/homepage.png)
+!["Website Demo - Product Details Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/productpage.png)
+!["Website Demo - Cart Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/shoppingcart.png)
+!["Website Demo - Shipping Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/shippingpage.png)
+!["Website Demo - Place Order Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/orderpage1.png)
+!["Website Demo - Order Summary Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/orderpage.png)
+!["Website Demo - Order History Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/orderhistory.png)
+!["Website Demo - Sign in Page"](https://github.com/khadergw/Final-E-Commerce/blob/master/screenshots/signinpage.png)
 
 
 
 ## Run the website on your local machine
 
 1- Clone repo - git@github.com:khadergw/Final-E-Commerce.git
+
 2- $cd Final-E-Commerce
+
 3- Install MongoDB
+
 4- Create .env file in the root folder and set MONGODB_URL=mongodb://localhost/amazona
+
 5- Run backend - in the root folder $npm install then $npm start
+
 6- Run frontend - $cd frontend then $npm install and then $npm start
+
 7- Seed users by running (http://localhost:5000/api/users/seed) in the browser
+
 8- Seed products by running (http://localhost:5000/api/products/seed) in the browser
 
 ## Tech Stack
